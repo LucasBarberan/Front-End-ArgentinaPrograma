@@ -1,0 +1,72 @@
+{
+  "perfil": {
+    "nombre": "Lucas Barberan",
+    "descripcion": "Desarrollador web full stack"
+  },
+  "educacion": [
+    {
+      "id": 2,
+      "institucion": "Argentina Programa",
+      "linkImagen": "https://yt3.ggpht.com/9upo5zbtXzvItj8IMHF1X9hI95x4YOeGCApLk1DhMQCHftmJvf2GWmbJXrC1TKCrn-AyQ2txBw=s900-c-k-c0x00ffffff-no-rj",
+      "carrera": "Desarrollador full stack Jr",
+      "estado": "Cursando",
+      "tiempodesde": "Febrero 2022",
+      "tiempohasta": "Agosto 2022"
+    },
+    {
+      "id": 3,
+      "institucion": "Oracle - Alura Latam",
+      "linkImagen": "https://cdn2.gnarususercontent.com.br/6/449886/f2b41d57-19f7-494f-96d0-50f56b0ffed7.png",
+      "carrera": "Programacion",
+      "estado": "Cursando",
+      "tiempodesde": "Agosto 2022",
+      "tiempohasta": "Febrero 2022"
+    },
+    {
+      "id": 5,
+      "institucion": "Instituto Superior \"Dr. Ramón Carrillo\"",
+      "linkImagen": "https://scontent.fcor2-2.fna.fbcdn.net/v/t1.18169-9/996789_171551756357008_1706272026_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHAt75dHZVoS3a1SIUk8PDiFUvs5Sq1jqoVS-zlKrWOqtcrOiSoHuzxXkAb7tzysdPHRz1WDK3Y_RjmXNxflIRx&_nc_ohc=v9Oe85QYyHMAX-1eRjx&_nc_ht=scontent.fcor2-2.fna&oh=00_AT_m4eCAhEmSJ5prEzpb9TZ6sYGXIsQdRQegDhs1hsYcgQ&oe=631908B5",
+      "carrera": "Tecnicatura Superior En Desarrollo De Software",
+      "estado": "Cursando",
+      "tiempodesde": "2020",
+      "tiempohasta": "2022"
+    }
+  ],
+  "habilidades": [
+    {
+      "id": 2,
+      "name": "CSS",
+      "porcentaje": 60
+    },
+    {
+      "id": 6,
+      "name": "JavaScript",
+      "porcentaje": 40
+    },
+    {
+      "id": 8,
+      "name": "HTML",
+      "porcentaje": 70
+    },
+    {
+      "id": 9,
+      "name": "Java Backend",
+      "porcentaje": 30
+    },
+    {
+      "id": 10,
+      "name": "Visual Basic",
+      "porcentaje": 80
+    }
+  ],
+  "proyectos": [
+    {
+      "id": 1,
+      "name": "Liga Catan Morribell",
+      "descripcion": "Tabla clasificatoria del famoso juego \"Catan\"",
+      "link": "ligacatanmb.tk",
+      "linkImagen": "https://www.cazagangas.com.ar/images/juegos/catan.jpg",
+      "fecha": "10/05/2023"
+    }
+  ]
+}

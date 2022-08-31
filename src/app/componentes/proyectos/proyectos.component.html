@@ -1,0 +1,136 @@
+<form [formGroup]="form">
+  <div>    
+    <div class="modal fade" id="modalAgregarProyecto" tabindex="-1" role="dialog" aria-labelledby="modalAgregarProyecto" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Agregar Proyecto</h5>
+            <button type="button" class="btn-editar" data-dismiss="modal" aria-label="Close">
+              <img src="./assets/Icons/x.svg" alt="Bootstrap" width="30" height="30" style="margin-top: -10px;">
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row row-cols-2">
+                <div class="col"><label for="">Titulo: </label></div>
+                <div class="col"><input formControlName="name" type="text" class="txtModal">
+                  <div class="error" *ngIf="form.get('name')?.invalid&&(form.get('name')?.touched || form.get('name')?.dirty)">
+                    <span *ngIf="form.get('name')?.hasError('required')" class="text-danger">*Este campo es requerido</span>
+                  </div>
+                </div>
+                <div class="col"><label for="">Descripcion </label></div>
+                <div class="col"><input formControlName="descripcion" type="text" class="txtModal">
+                  <div class="error" *ngIf="form.get('descripcion')?.invalid&&(form.get('descripcion')?.touched || form.get('descripcion')?.dirty)">
+                    <span *ngIf="form.get('descripcion')?.hasError('required')" class="text-danger">*Este campo es requerido</span>
+                  </div>
+                </div>
+                <div class="col"><label for="">Link: </label></div>
+                <div class="col"><input formControlName="link" type="text" class="txtModal">
+                  <div class="error" *ngIf="form.get('link')?.invalid&&(form.get('link')?.touched || form.get('link')?.dirty)">
+                    <span *ngIf="form.get('link')?.hasError('required')" class="text-danger">*Este campo es requerido</span>
+                  </div>
+                </div>
+                <div class="col"><label for="">Link Imagen: </label></div>
+                <div class="col"><input formControlName="linkImagen" type="text" class="txtModal">
+                  <div class="error" *ngIf="form.get('linkImagen')?.invalid&&(form.get('linkImagen')?.touched || form.get('linkImagen')?.dirty)">
+                    <span *ngIf="form.get('linkImagen')?.hasError('required')" class="text-danger">*Este campo es requerido</span>
+                  </div>
+                </div>
+                <div class="col"><label for="">Fecha: </label></div>
+                <div class="col"><input formControlName="fecha" type="text" class="txtModal">
+                  <div class="error" *ngIf="form.get('fecha')?.invalid&&(form.get('fecha')?.touched || form.get('fecha')?.dirty)">
+                    <span *ngIf="form.get('fecha')?.hasError('required')" class="text-danger">*Este campo es requerido</span>
+                  </div>
+                </div>
+            </div>
+          <div class="modal-footer" style="margin-top: 15px;">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button (click)="agregarProyecto()" [disabled]="form.get('fecha')?.invalid || form.get('name')?.invalid ||form.get('link')?.invalid ||form.get('descripcion')?.invalid || form.get('linkImagen')?.invalid" type="button" class="btn btn-primary" data-dismiss="modal">Guardar</button>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<form [formGroup]="form2">
+  <div>    
+    <div class="modal fade" id="modalEditarProyecto" tabindex="-1" role="dialog" aria-labelledby="modalEditarProyecto" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Editar Proyecto</h5>
+            <button type="button" class="btn-editar" data-dismiss="modal" aria-label="Close">
+              <img src="./assets/Icons/x.svg" alt="Bootstrap" width="30" height="30" style="margin-top: -10px;">
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row row-cols-2">
+                <div class="col"><label for="">Titulo: </label></div>
+                <div class="col"><input formControlName="name" type="text" class="txtModal" ngModel="{{edicionProyecto.name}}">
+                  <div class="error" *ngIf="form2.get('name')?.invalid&&(form2.get('name')?.touched || form2.get('name')?.dirty)">
+                    <span *ngIf="form2.get('name')?.hasError('required')" class="text-danger">*Este campo es requerido</span>
+                  </div>
+                </div>
+                <div class="col"><label for="">Descripcion </label></div>
+                <div class="col"><input formControlName="descripcion" type="text" class="txtModal" ngModel="{{edicionProyecto.descripcion}}">
+                  <div class="error" *ngIf="form2.get('descripcion')?.invalid&&(form2.get('descripcion')?.touched || form2.get('descripcion')?.dirty)">
+                    <span *ngIf="form2.get('descripcion')?.hasError('required')" class="text-danger">*Este campo es requerido</span>
+                  </div>
+                </div>
+                <div class="col"><label for="">Link: </label></div>
+                <div class="col"><input formControlName="link" type="text"  class="txtModal" ngModel="{{edicionProyecto.link}}">
+                  <div class="error" *ngIf="form2.get('link')?.invalid&&(form2.get('link')?.touched || form2.get('link')?.dirty)">
+                    <span *ngIf="form2.get('link')?.hasError('required')" class="text-danger">*Este campo es requerido</span>
+                  </div>
+                </div>
+                <div class="col"><label for="">Link Imagen: </label></div>
+                <div class="col"><input formControlName="linkImagen" type="text"  class="txtModal" ngModel="{{edicionProyecto.linkImagen}}">
+                  <div class="error" *ngIf="form2.get('linkImagen')?.invalid&&(form2.get('linkImagen')?.touched || form2.get('linkImagen')?.dirty)">
+                    <span *ngIf="form2.get('linkImagen')?.hasError('required')" class="text-danger">*Este campo es requerido</span>
+                  </div>
+                </div>
+                <div class="col"><label for="">Fecha: </label></div>
+                <div class="col"><input formControlName="fecha" type="text"  class="txtModal" ngModel="{{edicionProyecto.fecha}}">
+                  <div class="error" *ngIf="form2.get('fecha')?.invalid&&(form2.get('fecha')?.touched || form2.get('fecha')?.dirty)">
+                    <span *ngIf="form2.get('fecha')?.hasError('required')" class="text-danger">*Este campo es requerido</span>
+                  </div>
+                </div>
+            </div>
+          <div class="modal-footer" style="margin-top: 15px;">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button (click)="editarProyecto()" [disabled]="form2.get('fecha')?.invalid || form2.get('name')?.invalid ||form2.get('link')?.invalid ||form2.get('descripcion')?.invalid || form2.get('linkImagen')?.invalid" type="button" class="btn btn-primary" data-dismiss="modal">Guardar</button>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<div class="card" style="width: 100%; margin-bottom: 20px;">
+    <div class="d-flex justify-content-between">
+      <h4 class="titulo">Proyectos </h4>
+      <button *ngIf="data$|async" type="button" class="btn-editar edicion1" style="margin-right:20px; margin-top:10px;" data-toggle="modal" data-target="#modalAgregarProyecto"><img src="./assets/Icons/plus.svg" alt="Bootstrap" width="25" height="25" ></button>
+    </div>
+    <div class="card-bodyexp">
+      <div class="d-flex division" *ngFor="let proyecto of miPorfolioProyectos;let indice=index">
+        <div><img [src]="proyecto.linkImagen" alt="proyecto" style="height: 100px;width:100px;"></div>
+        <div style="width: 100%;">
+          <div class="d-flex justify-content-between" style="width:100%;height: 25px;">
+            <h5  class="edicion1 edicion-hide1"><input type="text" id="txtEducacionInstitucion"></h5>
+            <h5 class="margen" style="margin-left: 15px;">{{proyecto.name}}</h5>
+            <div *ngIf="data$|async">
+              <button (click)="irEditarProyecto(indice,proyecto.id)"  type="button" style="margin-right:20px; margin-top:10px;" data-toggle="modal" data-target="#modalEditarProyecto" class="btn-editar hide" value={{proyecto.id}}><img src="./assets/Icons/pencil.svg" alt="Bootstrap" width="20" height="15"></button>
+              <button (click)="borrarProyecto(proyecto.id)" class="btn-editar hide" style="margin-left: -20px;"><img src="./assets/Icons/trash3-fill.svg" alt="Bootstrap" width="20" height="15"></button>  
+            </div>
+        </div>
+          <div class="institucion" style="margin-top: 5px;margin-left: 15px;">
+            <p class="estado margen text-secondary">Descripcion: {{proyecto.descripcion}}</p>
+            <p class="margen text-secondary">Link: <a *ngIf="proyecto.link.includes('http')" href="{{proyecto.link}}">{{proyecto.link}}</a> <a *ngIf="!proyecto.link.includes('http')" href="http://{{proyecto.link}}">{{proyecto.link}}</a></p>
+            <p class="tiempodesde margen text-secondary">{{proyecto.fecha}}</p>
+          </div> 
+        </div> 
+      </div>
+    </div>
+</div>

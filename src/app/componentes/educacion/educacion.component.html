@@ -1,0 +1,154 @@
+<form [formGroup]="form">
+  <div>    
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Agregar Educacion</h5>
+            <button type="button" class="btn-editar" data-dismiss="modal" aria-label="Close">
+              <img src="./assets/Icons/x.svg" alt="Bootstrap" width="30" height="30" style="margin-top: -10px;">
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row row-cols-2">
+                <div class="col"><label for="">Institucion: </label></div>
+                <div class="col"><input formControlName="institucion"  type="text" class="txtModal">
+                  <div class="error" *ngIf="form.get('institucion')?.invalid&&(form.get('institucion')?.touched || form.get('institucion')?.dirty)">
+                    <span *ngIf="form.get('institucion')?.hasError('required')" class="text-danger">*Este campo es requerido</span>
+                  </div>
+                </div>
+                <div class="col"><label for="">Link de imagen: </label></div>
+                <div class="col"><input formControlName="linkImagen"  type="text" class="txtModal">
+                  <div class="error" *ngIf="form.get('linkImagen')?.invalid&&(form.get('linkImagen')?.touched || form.get('linkImagen')?.dirty)">
+                    <span *ngIf="form.get('linkImagen')?.hasError('required')" class="text-danger">*Este campo es requerido</span>
+                  </div>
+                </div>
+                <div class="col"><label for="">Carrera: </label></div>
+                <div class="col"><input formControlName="carrera" type="text" class="txtModal">
+                  <div class="error" *ngIf="form.get('carrera')?.invalid&&(form.get('carrera')?.touched || form.get('carrera')?.dirty)">
+                    <span *ngIf="form.get('carrera')?.hasError('required')" class="text-danger">*Este campo es requerido</span>
+                  </div>
+                </div>
+                <div class="col"><label for="">Estado: </label></div>
+                <div class="col"><input formControlName="estado"  type="text" class="txtModal">
+                  <div class="error" *ngIf="form.get('estado')?.invalid&&(form.get('estado')?.touched || form.get('estado')?.dirty)">
+                    <span *ngIf="form.get('estado')?.hasError('required')" class="text-danger">*Este campo es requerido</span>
+                  </div>
+                </div>
+                <div class="col"><label for="">Año ingreso: </label></div>
+                <div class="col"><input formControlName="tiempoDesde"  type="text" class="txtModal">
+                  <div class="error" *ngIf="form.get('tiempoDesde')?.invalid&&(form.get('tiempoDesde')?.touched || form.get('tiempoDesde')?.dirty)">
+                    <span *ngIf="form.get('tiempoDesde')?.hasError('required')" class="text-danger">*Este campo es requerido</span>
+                  </div>
+                </div>
+                <div class="col"><label for="">Año egreso: </label></div>
+                <div class="col"><input formControlName="tiempoHasta"  type="text" class="txtModal">
+                  <div class="error" *ngIf="form.get('tiempoHasta')?.invalid&&(form.get('tiempoHasta')?.touched || form.get('tiempoHasta')?.dirty)">
+                    <span *ngIf="form.get('tiempoHasta')?.hasError('required')" class="text-danger">*Este campo es requerido</span>
+                  </div>
+                </div>
+            </div>
+          <div class="modal-footer" style="margin-top: 15px;">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button (click)="agregarEducacion()" [disabled]=" ((form.get('institucion')?.invalid )|| (form.get('carrera')?.invalid) || (form.get('estado')?.invalid) || (form.get('tiempodesde')?.invalid) || (form.get('tiempohasta')?.invalid))" type="button" class="btn btn-primary" data-dismiss="modal">Guardar</button>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<form [formGroup]="form1">
+  <div>    
+    <div class="modal fade" id="modalEdicion" tabindex="-1" role="dialog" aria-labelledby="modalEdicion" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Editar Educacion</h5>
+            <button type="button" class="btn-editar" data-dismiss="modal" aria-label="Close">
+              <img src="./assets/Icons/x.svg" alt="Bootstrap" width="30" height="30" style="margin-top: -10px;">
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row row-cols-2">
+                <div class="col"><label for="">Institucion: </label></div>
+                <div class="col"><input formControlName="institucion" type="text" class="txtModal" ngModel="{{edicionEducacion.institucion}}">
+                  <div class="error" *ngIf="form1.get('institucion')?.invalid&&(form1.get('institucion')?.touched || form1.get('institucion')?.dirty)">
+                    <span *ngIf="form1.get('institucion')?.hasError('required')" class="text-danger">*Este campo es requerido</span>
+                  </div>
+                </div>
+                <div class="col"><label for="">Link de imagen: </label></div>
+                <div class="col"><input formControlName="linkImagen" type="text" class="txtModal" ngModel="{{edicionEducacion.linkImagen}}">
+                  <div class="error" *ngIf="form1.get('linkImagen')?.invalid&&(form1.get('linkImagen')?.touched || form1.get('linkImagen')?.dirty)">
+                    <span *ngIf="form1.get('linkImagen')?.hasError('required')" class="text-danger">*Este campo es requerido</span>
+                  </div>
+                </div>
+                <div class="col"><label for="">Carrera: </label></div>
+                <div class="col"><input formControlName="carrera" type="text" class="txtModal" ngModel="{{edicionEducacion.carrera}}">
+                  <div class="error" *ngIf="form1.get('carrera')?.invalid&&(form1.get('carrera')?.touched || form1.get('carrera')?.dirty)">
+                    <span *ngIf="form1.get('carrera')?.hasError('required')" class="text-danger">*Este campo es requerido</span>
+                  </div>
+                </div>
+                <div class="col"><label for="">Estado: </label></div>
+                <div class="col"><input formControlName="estado" type="text" class="txtModal" ngModel="{{edicionEducacion.estado}}">
+                  <div class="error" *ngIf="form1.get('estado')?.invalid&&(form1.get('estado')?.touched || form1.get('estado')?.dirty)">
+                    <span *ngIf="form1.get('estado')?.hasError('required')" class="text-danger">*Este campo es requerido</span>
+                  </div>
+                </div>
+                <div class="col"><label for="">Año ingreso: </label></div>
+                <div class="col"><input formControlName="tiempoDesde" type="text" class="txtModal" ngModel="{{edicionEducacion.tiempoDesde}}">
+                  <div class="error" *ngIf="form1.get('tiempoDesde')?.invalid&&(form1.get('tiempoDesde')?.touched || form1.get('tiempoDesde')?.dirty)">
+                    <span *ngIf="form1.get('tiempoDesde')?.hasError('required')" class="text-danger">*Este campo es requerido</span>
+                  </div>
+                </div>
+                <div class="col"><label for="">Año egreso: </label></div>
+                <div class="col"><input formControlName="tiempoHasta" type="text" class="txtModal" ngModel="{{edicionEducacion.tiempoHasta}}">
+                  <div class="error" *ngIf="form1.get('tiempoHasta')?.invalid&&(form1.get('tiempoHasta')?.touched || form1.get('tiempoHasta')?.dirty)">
+                    <span *ngIf="form1.get('tiempoHasta')?.hasError('required')" class="text-danger">*Este campo es requerido</span>
+                  </div>
+                </div>
+            </div>
+          <div class="modal-footer" style="margin-top: 15px;">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button (click)="editarEducacion()" [disabled]=" ((form1.get('institucion')?.invalid )|| (form1.get('carrera')?.invalid) || (form1.get('estado')?.invalid) || (form1.get('tiempodesde')?.invalid) || (form1.get('tiempohasta')?.invalid))" type="button" class="btn btn-primary" data-dismiss="modal">Editar</button>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+
+<div class="card " style="width: 100%;">
+  <div class="d-flex justify-content-between">
+    <h4 class="titulo">Educacion</h4>
+    <div *ngIf="data$|async">
+      <button type="button" class="btn-editar edicion1" style="margin-right:20px; margin-top:10px;" data-toggle="modal" data-target="#exampleModalCenter"><img src="./assets/Icons/plus.svg" alt="Bootstrap" width="25" height="25" ></button>
+    </div>
+  </div>
+  <div class="card-bodyexp"  id="tabla-experiencia">
+    <div class="d-flex division" *ngFor="let educacion of miPorfolioEducacion; let indice=index">
+      <div><img [src]="educacion.linkImagen" alt="educacion" style="height: 110px;width:110px;"></div>
+      <div style="width: 100%;">
+        <div class="d-flex justify-content-between" style="width:100%;height: 25px;">
+          <h5  class="edicion1 edicion-hide1"><input type="text" id="txtEducacionInstitucion"></h5>
+          <h5 class="margen">{{educacion.institucion}}</h5>
+          <div *ngIf="data$|async">
+            <button (click)="irEditarEducacion(indice,educacion.id)" type="button" style="margin-right:20px; margin-top:10px;" data-toggle="modal" data-target="#modalEdicion" class="btn-editar hide" value={{educacion.id}}><img src="./assets/Icons/pencil.svg" alt="Bootstrap" width="20" height="15"></button>
+            <button (click)="borrarEducacion(educacion.id)" class="btn-editar hide" style="margin-left: -20px;"><img src="./assets/Icons/trash3-fill.svg" alt="Bootstrap" width="20" height="15"></button> 
+          </div>
+        </div>
+        <div class="institucion" style="margin-top: 10px;">
+            <p class="edicion1 edicion-hide1 "><input type="text" id="txtEducacionCarrera"></p>
+            <p class="carrera margen text-secondary">{{educacion.carrera}}</p>
+            <p class="edicion1 edicion-hide1 text-secondary"><input type="text" id="txtEducacionEstado"></p>
+            <p class="estado margen text-secondary">Estado: {{educacion.estado}}</p>
+            <p class="edicion1 edicion-hide1 text-secondary"><input type="text" id="txtEducacionTiempo"></p>
+            <p class="tiempodesde margen text-secondary">{{educacion.tiempoDesde}} - {{educacion.tiempoHasta}}</p>
+        </div> 
+      </div> 
+    </div>
+  </div>
+</div>
